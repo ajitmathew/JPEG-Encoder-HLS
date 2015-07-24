@@ -1,29 +1,25 @@
 #include <iostream>
-#include "zigzag.cpp"
+#include "zigzag.hpp"
 using namespace std;
 int main()
 {
-	int t[8][8];
-	for ( int i = 0; i < 8; i++ )
+	int t[64];
+	for ( int i = 0; i < 64; i++ )
 	{
-		for ( int j = 0; j < 8; j++ )
-			t[i][j] = 8*i + j;
+			t[i] = i;
+			cout << t[i] << ' ';
 	}
+	cout << endl;
 
-	int x[8][8];
+	int x[64];
 	zigzag(t,x);
-	for ( int i = 0; i < 8; i++ )
+	
+	for ( int i = 0; i < SIZE; i++ )
 	{
-		for (int j = 0; j < 8; j++ )
-			cout << t[i][j] << ' ';
-		cout << endl;
+			cout << x[i] << ' ';
 	}
-	for ( int i = 0; i < 8; i++ )
-	{
-		for (int j = 0; j < 8; j++ )
-			cout << x[i][j] << ' ';
-		cout << endl;
-	}
+	
+	cout << endl;
 
 	return 0;
 }
